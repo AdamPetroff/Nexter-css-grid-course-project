@@ -1,0 +1,61 @@
+.gallery {
+    background-color: $color-grey-light-1;
+    grid-column: full-start / full-end;
+    display: grid;
+    grid-gap: 1.5rem;
+    padding: 1.5rem;
+
+    grid-template:
+            "a a b b b c d d" 5vw
+            "a a b b b c d d" 5vw
+            "e e b b b h h i" 5vw
+            "e e f f g h h i" 5vw
+            "e e f f m m m i" 5vw
+            "j k k l m m m n" 5vw
+            "j k k l m m m n" 5vw
+            / 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+
+    @media only screen and (max-width: $bp-medium) {
+        grid-template:
+                "a a b b b" 5vw
+                "a a b b b" 5vw
+                "a a b b b" 5vw
+                "e e b b b" 5vw
+                "e e l d d" 5vw
+                "e e l d d" 5vw
+                "e e l d d" 5vw
+                "m m m h n" 5vw
+                "m m m h n" 5vw
+                "m m m h n" 5vw
+                "m m m k k" 5vw
+                "g f f k k" 5vw
+                "g f f k k" 5vw
+                "c c j j i" 5vw
+                "c c j j i" 5vw
+                "c c j j i" 5vw;
+    }
+
+    &__item {
+        &--1 { grid-area: a; }
+        &--2 { grid-area: b; }
+        &--3 { grid-area: c; }
+        &--4 { grid-area: d; }
+        &--5 { grid-area: e; }
+        &--6 { grid-area: f; }
+        &--7 { grid-area: g; }
+        &--8 { grid-area: h; }
+        &--9 { grid-area: i; }
+        &--10 { grid-area: j; }
+        &--11 { grid-area: k; }
+        &--12 { grid-area: l; }
+        &--13 { grid-area: m; }
+        &--14 { grid-area: n; }
+    }
+
+    &__img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+}
